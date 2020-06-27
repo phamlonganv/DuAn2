@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="46d867f1-4f07-4b71-903f-46d09d3a275d">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Crosstab Data Text" hAlign="Center"/>
+	<style name="table 1">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="New Dataset 1" uuid="18f37456-23fe-4605-a590-e9bb9daf8723"/>
+	<subDataset name="Table Dataset 1" uuid="f880cb9b-2676-4b45-8c0f-57339dbbbc59"/>
+	<subDataset name="New Dataset 2" uuid="a3e2d900-0be3-4bae-a64e-2eea4833edde">
+		<queryString language="SQL">
+			<![CDATA[SELECT
+     HoaDon."MaHoaDon" AS HoaDon_MaHoaDon,
+     HoaDon."TenKhachHang" AS HoaDon_TenKhachHang,
+     HoaDon."TongSoNgayO" AS HoaDon_TongSoNgayO,
+     HoaDon."MaPhong" AS HoaDon_MaPhong,
+     HoaDon."TongTienNgay" AS HoaDon_TongTienNgay,
+     HoaDon."TongTienDichVu" AS HoaDon_TongTienDichVu,
+     HoaDon."TongSo" AS HoaDon_TongSo,
+     HoaDon."MaKhachHang" AS HoaDon_MaKhachHang,
+     HoaDon."NgayLapHoaDon" AS HoaDon_NgayLapHoaDon,
+     HoaDon."SoCmnd" AS HoaDon_SoCmnd
+FROM
+     "dbo"."HoaDon" HoaDon]]>
+		</queryString>
+		<field name="HoaDon_MaHoaDon" class="java.lang.Integer"/>
+		<field name="HoaDon_TenKhachHang" class="java.lang.String"/>
+		<field name="HoaDon_TongSoNgayO" class="java.lang.Integer"/>
+		<field name="HoaDon_MaPhong" class="java.lang.String"/>
+		<field name="HoaDon_TongTienNgay" class="java.lang.Double"/>
+		<field name="HoaDon_TongTienDichVu" class="java.lang.Double"/>
+		<field name="HoaDon_TongSo" class="java.lang.Double"/>
+		<field name="HoaDon_MaKhachHang" class="java.lang.String"/>
+		<field name="HoaDon_NgayLapHoaDon" class="java.sql.Date"/>
+		<field name="HoaDon_SoCmnd" class="java.lang.String"/>
+	</subDataset>
+	<parameter name="NgayBatDau" class="java.util.Date">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="NgayKetThuc" class="java.util.Date">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     HoaDon."MaHoaDon" AS HoaDon_MaHoaDon,
+     HoaDon."TenKhachHang" AS HoaDon_TenKhachHang,
+     HoaDon."TongSoNgayO" AS HoaDon_TongSoNgayO,
+     HoaDon."MaPhong" AS HoaDon_MaPhong,
+     HoaDon."TongTienNgay" AS HoaDon_TongTienNgay,
+     HoaDon."TongTienDichVu" AS HoaDon_TongTienDichVu,
+     HoaDon."TongSo" AS HoaDon_TongSo,
+     HoaDon."MaKhachHang" AS HoaDon_MaKhachHang,
+     HoaDon."NgayLapHoaDon" AS HoaDon_NgayLapHoaDon,
+     HoaDon."SoCmnd" AS HoaDon_SoCmnd
+FROM
+     "dbo"."HoaDon" HoaDon
+where HoaDon."NgayLapHoaDon" between $P{NgayBatDau} and $P{NgayKetThuc}]]>
+	</queryString>
+	<field name="HoaDon_MaHoaDon" class="java.lang.Integer"/>
+	<field name="HoaDon_TenKhachHang" class="java.lang.String"/>
+	<field name="HoaDon_TongSoNgayO" class="java.lang.Integer"/>
+	<field name="HoaDon_MaPhong" class="java.lang.String"/>
+	<field name="HoaDon_TongTienNgay" class="java.lang.Double"/>
+	<field name="HoaDon_TongTienDichVu" class="java.lang.Double"/>
+	<field name="HoaDon_TongSo" class="java.lang.Double"/>
+	<field name="HoaDon_MaKhachHang" class="java.lang.String"/>
+	<field name="HoaDon_NgayLapHoaDon" class="java.sql.Date"/>
+	<field name="HoaDon_SoCmnd" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<componentElement>
+				<reportElement key="table 2" style="table 2" x="0" y="0" width="555" height="125" uuid="3ffe418b-44bd-46df-bc9d-4eb570d22b32"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="New Dataset 2" uuid="7abdd4be-3c12-4a1a-ac95-2ac233b2bd37">
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="90" uuid="80cb45a0-a5c8-41ce-8006-45f4c84f57f1">
+						<jr:tableHeader style="table 2_TH" height="30" rowSpan="1"/>
+						<jr:tableFooter style="table 2_TH" height="31" rowSpan="1"/>
+						<jr:columnHeader style="table 2_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="704fc66c-a1b5-4230-8c9b-e3347b948478"/>
+								<text><![CDATA[HoaDon_MaHoaDon]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table 2_CH" height="30" rowSpan="1"/>
+						<jr:detailCell style="table 2_TD" height="30" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="bd54b267-eeec-4de3-9f9b-6dddc045a9a1"/>
+								<textFieldExpression><![CDATA[$F{HoaDon_MaHoaDon}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="701b0827-d6d7-4c79-a597-dc52fe6b4d53">
+						<jr:tableHeader style="table 2_TH" height="30" rowSpan="1"/>
+						<jr:tableFooter style="table 2_TH" height="31" rowSpan="1"/>
+						<jr:columnHeader style="table 2_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="5e70371d-feb1-4d8d-9fe4-1917f02b4742"/>
+								<text><![CDATA[HoaDon_TenKhachHang]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table 2_CH" height="30" rowSpan="1"/>
+						<jr:detailCell style="table 2_TD" height="30" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="9389ec4b-8469-46c5-ac74-7a7e081c908d"/>
+								<textFieldExpression><![CDATA[$F{HoaDon_TenKhachHang}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="c5378258-c691-4545-b4df-921ae8911dca">
+						<jr:tableHeader style="table 2_TH" height="30" rowSpan="1"/>
+						<jr:tableFooter style="table 2_TH" height="31" rowSpan="1"/>
+						<jr:columnHeader style="table 2_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="0ac044aa-5426-4e0f-a2d5-5b7f9b6f652b"/>
+								<text><![CDATA[HoaDon_TongSoNgayO]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table 2_CH" height="30" rowSpan="1"/>
+						<jr:detailCell style="table 2_TD" height="30" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="d48d809c-946e-4781-866c-729f58a6bd92"/>
+								<textFieldExpression><![CDATA[$F{HoaDon_TongSoNgayO}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="84c417b7-50e0-4265-90a7-75946eeec02f">
+						<jr:tableHeader style="table 2_TH" height="30" rowSpan="1"/>
+						<jr:tableFooter style="table 2_TH" height="31" rowSpan="1"/>
+						<jr:columnHeader style="table 2_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="f480c021-a392-431a-8c18-c7c5ba80a64f"/>
+								<text><![CDATA[HoaDon_MaPhong]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table 2_CH" height="30" rowSpan="1"/>
+						<jr:detailCell style="table 2_TD" height="30" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="0bc7b8ea-daed-40e9-b627-959797bf8ddb"/>
+								<textFieldExpression><![CDATA[$F{HoaDon_MaPhong}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="0e25ff93-ed37-4681-b3eb-8caf0a989716">
+						<jr:tableHeader style="table 2_TH" height="30" rowSpan="1"/>
+						<jr:tableFooter style="table 2_TH" height="31" rowSpan="1"/>
+						<jr:columnHeader style="table 2_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="8eae5732-05b4-4cc9-b1ec-f9b859fc974e"/>
+								<text><![CDATA[HoaDon_TongTienNgay]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table 2_CH" height="30" rowSpan="1"/>
+						<jr:detailCell style="table 2_TD" height="30" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="ad458810-f837-47bf-ac86-2e18b6930093"/>
+								<textFieldExpression><![CDATA[$F{HoaDon_TongTienNgay}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="58f11af3-3f53-46fd-b33c-7be8b06d1af8">
+						<jr:tableHeader style="table 2_TH" height="30" rowSpan="1"/>
+						<jr:tableFooter style="table 2_TH" height="31" rowSpan="1"/>
+						<jr:columnHeader style="table 2_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="5d5855da-7738-43b9-a1cc-1106a9f0049c"/>
+								<text><![CDATA[HoaDon_TongTienDichVu]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table 2_CH" height="30" rowSpan="1"/>
+						<jr:detailCell style="table 2_TD" height="30" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="bf30dbb4-05ed-45a8-a4a6-97f2e3782b51"/>
+								<textFieldExpression><![CDATA[$F{HoaDon_TongTienDichVu}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="0a2ed513-2003-492a-9934-8787fd5f70c7">
+						<jr:tableHeader style="table 2_TH" height="30" rowSpan="1"/>
+						<jr:tableFooter style="table 2_TH" height="31" rowSpan="1"/>
+						<jr:columnHeader style="table 2_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="8593c607-b153-4fcb-ab29-05b0643fd948"/>
+								<text><![CDATA[HoaDon_TongSo]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table 2_CH" height="30" rowSpan="1"/>
+						<jr:detailCell style="table 2_TD" height="30" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="c77f6bc0-cbc6-4afe-a1ca-19a78950387e"/>
+								<textFieldExpression><![CDATA[$F{HoaDon_TongSo}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="41799efb-3ff5-46fc-af04-7bd411217803">
+						<jr:tableHeader style="table 2_TH" height="30" rowSpan="1"/>
+						<jr:tableFooter style="table 2_TH" height="31" rowSpan="1"/>
+						<jr:columnHeader style="table 2_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="77842365-a884-437f-9eeb-054121c0852c"/>
+								<text><![CDATA[HoaDon_MaKhachHang]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table 2_CH" height="30" rowSpan="1"/>
+						<jr:detailCell style="table 2_TD" height="30" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="72551998-83de-463d-811a-e35899073132"/>
+								<textFieldExpression><![CDATA[$F{HoaDon_MaKhachHang}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="a925c7ae-9f4a-4202-abab-261d7a4cb359">
+						<jr:tableHeader style="table 2_TH" height="30" rowSpan="1"/>
+						<jr:tableFooter style="table 2_TH" height="31" rowSpan="1"/>
+						<jr:columnHeader style="table 2_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="55cd22a1-7e6b-4646-b28b-cffd278e9d61"/>
+								<text><![CDATA[HoaDon_NgayLapHoaDon]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table 2_CH" height="30" rowSpan="1"/>
+						<jr:detailCell style="table 2_TD" height="30" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="8bd0295b-10a7-4ee3-864f-ab1554413878"/>
+								<textFieldExpression><![CDATA[$F{HoaDon_NgayLapHoaDon}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="c1fd4ed8-1a04-4505-a204-d09738eb2900">
+						<jr:tableHeader style="table 2_TH" height="30" rowSpan="1"/>
+						<jr:tableFooter style="table 2_TH" height="31" rowSpan="1"/>
+						<jr:columnHeader style="table 2_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="cc7db4ee-4210-4e0e-b311-064df0f7a6d8"/>
+								<text><![CDATA[HoaDon_SoCmnd]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table 2_CH" height="30" rowSpan="1"/>
+						<jr:detailCell style="table 2_TD" height="30" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="91ed770a-c4c1-4398-a4aa-017265e3c79e"/>
+								<textFieldExpression><![CDATA[$F{HoaDon_SoCmnd}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

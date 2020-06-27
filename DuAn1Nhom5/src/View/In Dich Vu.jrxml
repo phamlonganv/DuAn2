@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="7161ad05-ef22-4af4-beae-1df073b35b5a">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="New Dataset 1" uuid="4758f642-e16a-4485-8fd6-3e47f8ef1e98">
+		<queryString language="SQL">
+			<![CDATA[SELECT
+     DichVu."MaDichVu" AS DichVu_MaDichVu,
+     DichVu."TenDichVu" AS DichVu_TenDichVu,
+     DichVu."GiaDichVu" AS DichVu_GiaDichVu
+FROM
+     "dbo"."DichVu" DichVu]]>
+		</queryString>
+		<field name="DichVu_MaDichVu" class="java.lang.String"/>
+		<field name="DichVu_TenDichVu" class="java.lang.String"/>
+		<field name="DichVu_GiaDichVu" class="java.lang.Double"/>
+	</subDataset>
+	<queryString>
+		<![CDATA[SELECT
+     DichVu."MaDichVu" AS DichVu_MaDichVu,
+     DichVu."TenDichVu" AS DichVu_TenDichVu,
+     DichVu."GiaDichVu" AS DichVu_GiaDichVu
+FROM
+     "dbo"."DichVu" DichVu]]>
+	</queryString>
+	<field name="DichVu_MaDichVu" class="java.lang.String"/>
+	<field name="DichVu_TenDichVu" class="java.lang.String"/>
+	<field name="DichVu_GiaDichVu" class="java.lang.Double"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="137" y="40" width="172" height="39" uuid="3353675b-caa6-4d38-a37f-1db055543f58"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[Bang Danh Sach Dich Vu]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="155" splitType="Stretch">
+			<componentElement>
+				<reportElement key="table" style="table" x="41" y="0" width="360" height="140" uuid="33f25355-03d7-4d41-89c6-b449264a5fb0"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="New Dataset 1" uuid="3fa8c948-3007-4250-86de-7a4c0c8b82b2">
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="145" uuid="fdac6e85-cb04-4bb2-ad94-7f2b8bf4881c">
+						<jr:tableHeader style="table_TH" height="30" rowSpan="1"/>
+						<jr:tableFooter style="table_TH" height="33" rowSpan="1"/>
+						<jr:columnHeader style="table_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="d5adeadf-b27d-4bf5-8ca1-5a5df6aa0a3d"/>
+								<text><![CDATA[DichVu_MaDichVu]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table_CH" height="30" rowSpan="1"/>
+						<jr:detailCell style="table_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="791c00cb-a1d7-444a-a306-13d933e891da"/>
+								<textFieldExpression><![CDATA[$F{DichVu_MaDichVu}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="162" uuid="df7ed875-6d0b-4d09-89db-ff8d3db111bc">
+						<jr:tableHeader style="table_TH" height="30" rowSpan="1"/>
+						<jr:tableFooter style="table_TH" height="33" rowSpan="1"/>
+						<jr:columnHeader style="table_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="33848b34-149c-4ff7-86c0-447f19eeedda"/>
+								<text><![CDATA[DichVu_TenDichVu]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table_CH" height="30" rowSpan="1"/>
+						<jr:detailCell style="table_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="3dbb809c-bfe7-46a4-8b2d-46af39d2b683"/>
+								<textFieldExpression><![CDATA[$F{DichVu_TenDichVu}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="165" uuid="421075c7-7198-431c-8b6c-4b63d31c74c9">
+						<jr:tableHeader style="table_TH" height="30" rowSpan="1"/>
+						<jr:tableFooter style="table_TH" height="33" rowSpan="1"/>
+						<jr:columnHeader style="table_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="63ef8940-e5cf-4e7e-8d96-7dee3e02b023"/>
+								<text><![CDATA[DichVu_GiaDichVu]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table_CH" height="30" rowSpan="1"/>
+						<jr:detailCell style="table_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="a5437322-3a53-43c6-8ebb-03eb5a6a5428"/>
+								<textFieldExpression><![CDATA[$F{DichVu_GiaDichVu}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
